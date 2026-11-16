@@ -2,13 +2,13 @@
 
 中文音標 HTML 排版技能：拼音在上、注音在右，或兩者並存。
 
-| Skill | 版面 |
-|-------|------|
-| [`pinyin`](pinyin/) | 拼音置於中文字上方 |
-| [`zhuyin`](zhuyin/) | 直排注音與聲調置於右側 |
-| [`double-phonetic`](double-phonetic/) | 上方拼音、右側注音 |
+| Skill | 版面 | 預覽 |
+|-------|------|------|
+| [`pinyin`](pinyin/) | 拼音置於中文字上方 | [example](https://ianwu5205.github.io/mandarin-phonetic-skills/pinyin/assets/example.html) |
+| [`zhuyin`](zhuyin/) | 直排注音與聲調置於右側 | [example](https://ianwu5205.github.io/mandarin-phonetic-skills/zhuyin/assets/example.html) |
+| [`double-phonetic`](double-phonetic/) | 上方拼音、右側注音 | [example](https://ianwu5205.github.io/mandarin-phonetic-skills/double-phonetic/assets/example.html) |
 
-每個 skill 自成一套，可單獨發佈或安裝。用瀏覽器開啟 `*/assets/example.html` 即可預覽。
+每個 skill 自成一套，可單獨發佈或安裝。預覽透過 GitHub Pages 提供（`main` 根目錄），也可本機開啟 `*/assets/example.html`。
 
 ## 目錄結構
 
