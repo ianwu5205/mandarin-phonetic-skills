@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中文拼音排版範例</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&family=Noto+Sans+TC:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 32px; font-family: 'Noto Sans TC', sans-serif; background: white; }
+    .text { display: flex; flex-wrap: wrap; align-items: start; gap: 10px 6px; font-size: 112px; }
+    .character { display: inline-flex; flex-direction: column; align-items: center; font-size: 1em; color: black; break-inside: avoid; }
+    .pinyin { white-space: nowrap; font-family: 'Noto Sans', sans-serif; font-size: .255em; line-height: 1.2; color: #567b5b; }
+    .hanzi { font-size: 1em; line-height: 1.12; font-weight: 400; }
+  </style>
+</head>
+<body>
+  <div class="text">
+    <span class="character" role="img" aria-label="去，qù">
+      <span class="pinyin" aria-hidden="true">qù</span>
+      <span class="hanzi" aria-hidden="true">去</span>
+    </span>
+    <span class="character" role="img" aria-label="宣，xuān">
+      <span class="pinyin" aria-hidden="true">xuān</span>
+      <span class="hanzi" aria-hidden="true">宣</span>
+    </span>
+    <span class="character" role="img" aria-label="嗎，ma">
+      <span class="pinyin" aria-hidden="true">ma</span>
+      <span class="hanzi" aria-hidden="true">嗎</span>
+    </span>
+    <span class="character" role="img" aria-label="裝，zhuāng">
+      <span class="pinyin" aria-hidden="true">zhuāng</span>
+      <span class="hanzi" aria-hidden="true">裝</span>
+    </span>
+  </div>
+  <script>
+    const sizes = [40, 48, 64, 112, 180];
+    const sample = document.querySelector('.text');
+    sample.remove();
+    for (const size of sizes) {
+      const label = document.createElement('div');
+      label.textContent = `${size}px`;
+      label.style.cssText = 'margin-top:32px;font-size:13px;color:#666';
+      if (!document.body.children.length) label.style.marginTop = '0';
+      const row = sample.cloneNode(true);
+      row.style.fontSize = `${size}px`;
+      document.body.append(label, row);
+    }
+  </script>
+</body>
+</html>

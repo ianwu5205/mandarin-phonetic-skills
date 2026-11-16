@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中文雙音標排版範例</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&family=Noto+Sans+TC:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 32px; font-family: 'Noto Sans TC', sans-serif; background: white; }
+    .text { display: flex; flex-wrap: wrap; align-items: start; gap: 10px 6px; font-size: 112px; }
+    .character { display: inline-grid; grid-template-columns: 1em .46em; grid-template-rows: .36em 1.12em; font-size: 1em; color: black; break-inside: avoid; }
+    .pinyin { grid-column: 1; grid-row: 1; text-align: center; align-self: start; white-space: nowrap; font-family: 'Noto Sans', sans-serif; font-size: .255em; line-height: 1.2; color: #567b5b; }
+    .hanzi { grid-column: 1; grid-row: 2; font-size: 1em; line-height: 1.12; font-weight: 400; }
+    .zhuyin { grid-column: 2; grid-row: 2; align-self: center; position: relative; display: grid; grid-template-columns: 1em .65em; column-gap: .12em; align-items: center; padding-left: .08em; font-size: .23em; color: #6c7665; }
+    .symbols { display: flex; flex-direction: column; line-height: 1.2; }
+    .tone { font-size: .8em; line-height: 1; text-align: center; }
+    .neutral .tone { position: absolute; top: -.85em; left: .1em; width: 1.25em; }
+  </style>
+</head>
+<body>
+  <div class="text">
+    <span class="character" role="img" aria-label="去，qù，ㄑㄩˋ">
+      <span class="pinyin" aria-hidden="true">qù</span>
+      <span class="hanzi" aria-hidden="true">去</span>
+      <span class="zhuyin" aria-hidden="true"><span class="symbols"><span>ㄑ</span><span>ㄩ</span></span><span class="tone">ˋ</span></span>
+    </span>
+    <span class="character" role="img" aria-label="宣，xuān，ㄒㄩㄢ">
+      <span class="pinyin" aria-hidden="true">xuān</span>
+      <span class="hanzi" aria-hidden="true">宣</span>
+      <span class="zhuyin" aria-hidden="true"><span class="symbols"><span>ㄒ</span><span>ㄩ</span><span>ㄢ</span></span><span class="tone"></span></span>
+    </span>
+    <span class="character" role="img" aria-label="嗎，ma，˙ㄇㄚ">
+      <span class="pinyin" aria-hidden="true">ma</span>
+      <span class="hanzi" aria-hidden="true">嗎</span>
+      <span class="zhuyin neutral" aria-hidden="true"><span class="symbols"><span>ㄇ</span><span>ㄚ</span></span><span class="tone">˙</span></span>
+    </span>
+    <span class="character" role="img" aria-label="裝，zhuāng，ㄓㄨㄤ">
+      <span class="pinyin" aria-hidden="true">zhuāng</span>
+      <span class="hanzi" aria-hidden="true">裝</span>
+      <span class="zhuyin" aria-hidden="true"><span class="symbols"><span>ㄓ</span><span>ㄨ</span><span>ㄤ</span></span><span class="tone"></span></span>
+    </span>
+  </div>
+  <script>
+    const sizes = [40, 48, 64, 112, 180];
+    const sample = document.querySelector('.text');
+    sample.remove();
+    for (const size of sizes) {
+      const label = document.createElement('div');
+      label.textContent = `${size}px`;
+      label.style.cssText = 'margin-top:32px;font-size:13px;color:#666';
+      if (!document.body.children.length) label.style.marginTop = '0';
+      const row = sample.cloneNode(true);
+      row.style.fontSize = `${size}px`;
+      document.body.append(label, row);
+    }
+  </script>
+</body>
+</html>
