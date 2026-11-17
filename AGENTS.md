@@ -1,6 +1,6 @@
 # Agent notes — Mandarin Phonetic Skills
 
-This repo holds three independently publishable skills for Mandarin phonetic HTML.
+This repo holds independently publishable skills for Mandarin phonetic HTML.
 
 ## Skills
 
@@ -9,12 +9,13 @@ This repo holds three independently publishable skills for Mandarin phonetic HTM
 | `pinyin/` | Pinyin above the character only |
 | `zhuyin/` | Vertical zhuyin + tone on the right only |
 | `double-phonetic/` | Both pinyin above and zhuyin on the right (not 雙拼 IME) |
+| `phonetic-html-ruby/` | Pinyin or horizontal zhuyin above the character using native HTML ruby |
 
-Prefer the matching skill. Do not invent a fourth layout unless asked.
+Prefer the matching skill.
 
 ## Hard constraints
 
-1. **Solo install** — Each of `pinyin/`, `zhuyin/`, `double-phonetic/` must work alone. Never make a skill depend on `../common/` or a sibling skill at runtime. Shared text lives in that skill’s `references/` (copies).
+1. **Solo install** — Each skill must work alone. Never make a skill depend on `../common/` or a sibling skill at runtime. Shared text lives in that skill’s `references/` (copies).
 2. **Edit shared once** — Change `common/*.md`, then run `./scripts/sync-shared.sh`. Do not hand-edit only one copy of `references/shared.md` or `zhuyin-conversion.md`.
 3. **Example is source of truth for CSS** — Keep `SKILL.md` specs aligned with `assets/example.html`. After layout changes, update the example and the skill’s HTML/data snippets together.
 4. **Native HTML/CSS baseline** — No required Vue/Nuxt/Tailwind. Framework ports must keep the same em-based proportions.
@@ -28,7 +29,9 @@ Prefer the matching skill. Do not invent a fourth layout unless asked.
 | Reading/conversion policy, sentence wrap, a11y, acceptance baseline | Grid/flex structure, sizes, colors, sample HTML |
 | Pinyin→zhuyin conversion rules | Character data shape for that skill |
 
-## Layout conventions (do not drift casually)
+## Card layout conventions (do not drift casually)
+
+The native ruby skill uses inline text flow.
 
 - Container: `flex` + `wrap`, `gap: 10px 6px` (row / column).
 - Default card size ~`112px`; examples also show `40, 48, 64, 112, 180`.

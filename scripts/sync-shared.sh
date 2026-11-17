@@ -14,4 +14,7 @@ for skill in zhuyin double-phonetic; do
   cp "$root/common/zhuyin-conversion.md" "$root/$skill-tailwindcss/references/"
 done
 
+mkdir -p "$root/phonetic-html-ruby/references"
+cp "$root/common/shared.md" "$root/common/zhuyin-conversion.md" "$root/phonetic-html-ruby/references/"
+
 echo "Synced common/ → */references/"
