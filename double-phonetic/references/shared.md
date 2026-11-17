@@ -14,7 +14,7 @@
 ## 句子與整合
 
 - 字卡容器用 flex wrap，建議字間距 6px、行距 10px。換行可用 `flex-basis:100%` 的空節點；標點獨立呈現，不產生音標。保留原文字序。
-- 原生 HTML/CSS 是基準，不要求 Vue、Nuxt 或 Tailwind。若使用 Tailwind，把相同尺寸改為 utility classes；動態主字級以 style 綁定。避免用圖片或 canvas 代替文字。
+- 原生 HTML/CSS 是基準，不要求 Vue、Nuxt 或 Tailwind。Tailwind CSS 版使用 utility classes 保持相同的 em 比例，主字級可從完整的字級類別中選擇。避免用圖片或 canvas 代替文字。
 - 整張字卡可用 aria-label 給出字與音標，內部重複呈現的節點用 aria-hidden 隱藏，避免重複朗讀。列印時字卡設 `break-inside: avoid`。
 
 ## 驗收

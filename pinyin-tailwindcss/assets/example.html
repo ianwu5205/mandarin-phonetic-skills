@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中文拼音排版範例（Tailwind CSS）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&family=Noto+Sans+TC:wght@400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="m-8 space-y-8 bg-white font-sans">
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">40px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[40px]"></div>
+  </section>
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">48px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[48px]"></div>
+  </section>
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">64px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[64px]"></div>
+  </section>
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">112px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[112px]"></div>
+  </section>
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">180px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[180px]"></div>
+  </section>
+  <template id="cards">
+    <span class="inline-flex flex-col items-center text-black break-inside-avoid" role="img" aria-label="去，qù">
+      <span class="font-['Noto_Sans',sans-serif] text-[.255em]/[1.2] whitespace-nowrap text-green-800" aria-hidden="true">qù</span>
+      <span class="font-normal leading-[1.12]" aria-hidden="true">去</span>
+    </span>
+    <span class="inline-flex flex-col items-center text-black break-inside-avoid" role="img" aria-label="宣，xuān">
+      <span class="font-['Noto_Sans',sans-serif] text-[.255em]/[1.2] whitespace-nowrap text-green-800" aria-hidden="true">xuān</span>
+      <span class="font-normal leading-[1.12]" aria-hidden="true">宣</span>
+    </span>
+    <span class="inline-flex flex-col items-center text-black break-inside-avoid" role="img" aria-label="嗎，ma">
+      <span class="font-['Noto_Sans',sans-serif] text-[.255em]/[1.2] whitespace-nowrap text-green-800" aria-hidden="true">ma</span>
+      <span class="font-normal leading-[1.12]" aria-hidden="true">嗎</span>
+    </span>
+    <span class="inline-flex flex-col items-center text-black break-inside-avoid" role="img" aria-label="裝，zhuāng">
+      <span class="font-['Noto_Sans',sans-serif] text-[.255em]/[1.2] whitespace-nowrap text-green-800" aria-hidden="true">zhuāng</span>
+      <span class="font-normal leading-[1.12]" aria-hidden="true">裝</span>
+    </span>
+  </template>
+  <script>
+    const cards = document.getElementById('cards');
+    for (const row of document.querySelectorAll('[data-sample]')) {
+      row.append(cards.content.cloneNode(true));
+    }
+  </script>
+</body>
+</html>

@@ -4,12 +4,14 @@ set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
 
 for skill in pinyin zhuyin double-phonetic; do
-  mkdir -p "$root/$skill/references"
-  cp "$root/common/shared.md" "$root/$skill/references/shared.md"
+  mkdir -p "$root/$skill/references" "$root/$skill-tailwindcss/references"
+  cp "$root/common/shared.md" "$root/$skill/references/"
+  cp "$root/common/shared.md" "$root/$skill-tailwindcss/references/"
 done
 
 for skill in zhuyin double-phonetic; do
-  cp "$root/common/zhuyin-conversion.md" "$root/$skill/references/zhuyin-conversion.md"
+  cp "$root/common/zhuyin-conversion.md" "$root/$skill/references/"
+  cp "$root/common/zhuyin-conversion.md" "$root/$skill-tailwindcss/references/"
 done
 
 echo "Synced common/ → */references/"

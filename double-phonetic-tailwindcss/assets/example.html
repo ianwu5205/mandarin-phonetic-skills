@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中文雙音標排版範例（Tailwind CSS）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&family=Noto+Sans+TC:wght@400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="m-8 space-y-8 bg-white font-sans">
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">40px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[40px]"></div>
+  </section>
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">48px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[48px]"></div>
+  </section>
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">64px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[64px]"></div>
+  </section>
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">112px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[112px]"></div>
+  </section>
+  <section>
+    <h2 class="mb-1 text-sm font-normal text-neutral-600">180px</h2>
+    <div data-sample class="flex flex-wrap items-start gap-x-[6px] gap-y-[10px] font-['Noto_Sans_TC',sans-serif] text-[180px]"></div>
+  </section>
+  <template id="cards">
+    <span class="inline-grid grid-cols-[1em_.46em] grid-rows-[.36em_1.12em] text-black break-inside-avoid" role="img" aria-label="去，qù，ㄑㄩˋ">
+      <span class="font-['Noto_Sans',sans-serif] text-[.255em]/[1.2] whitespace-nowrap text-green-800 col-start-1 row-start-1 self-start text-center" aria-hidden="true">qù</span>
+      <span class="font-normal leading-[1.12] col-start-1 row-start-2" aria-hidden="true">去</span>
+      <span class="relative col-start-2 row-start-2 grid grid-cols-[1em_.65em] items-center self-center gap-x-[.12em] pl-[.08em] text-[.23em] text-stone-600" aria-hidden="true">
+        <span class="flex flex-col leading-[1.2]"><span>ㄑ</span><span>ㄩ</span></span>
+        <span class="text-center text-[.8em]/none">ˋ</span>
+      </span>
+    </span>
+    <span class="inline-grid grid-cols-[1em_.46em] grid-rows-[.36em_1.12em] text-black break-inside-avoid" role="img" aria-label="宣，xuān，ㄒㄩㄢ">
+      <span class="font-['Noto_Sans',sans-serif] text-[.255em]/[1.2] whitespace-nowrap text-green-800 col-start-1 row-start-1 self-start text-center" aria-hidden="true">xuān</span>
+      <span class="font-normal leading-[1.12] col-start-1 row-start-2" aria-hidden="true">宣</span>
+      <span class="relative col-start-2 row-start-2 grid grid-cols-[1em_.65em] items-center self-center gap-x-[.12em] pl-[.08em] text-[.23em] text-stone-600" aria-hidden="true">
+        <span class="flex flex-col leading-[1.2]"><span>ㄒ</span><span>ㄩ</span><span>ㄢ</span></span>
+        <span class="text-center text-[.8em]/none"></span>
+      </span>
+    </span>
+    <span class="inline-grid grid-cols-[1em_.46em] grid-rows-[.36em_1.12em] text-black break-inside-avoid" role="img" aria-label="嗎，ma，˙ㄇㄚ">
+      <span class="font-['Noto_Sans',sans-serif] text-[.255em]/[1.2] whitespace-nowrap text-green-800 col-start-1 row-start-1 self-start text-center" aria-hidden="true">ma</span>
+      <span class="font-normal leading-[1.12] col-start-1 row-start-2" aria-hidden="true">嗎</span>
+      <span class="relative col-start-2 row-start-2 grid grid-cols-[1em_.65em] items-center self-center gap-x-[.12em] pl-[.08em] text-[.23em] text-stone-600" aria-hidden="true">
+        <span class="flex flex-col leading-[1.2]"><span>ㄇ</span><span>ㄚ</span></span>
+        <span class="text-center text-[.8em]/none absolute -top-[.85em] left-[.1em] w-[1.25em]">˙</span>
+      </span>
+    </span>
+    <span class="inline-grid grid-cols-[1em_.46em] grid-rows-[.36em_1.12em] text-black break-inside-avoid" role="img" aria-label="裝，zhuāng，ㄓㄨㄤ">
+      <span class="font-['Noto_Sans',sans-serif] text-[.255em]/[1.2] whitespace-nowrap text-green-800 col-start-1 row-start-1 self-start text-center" aria-hidden="true">zhuāng</span>
+      <span class="font-normal leading-[1.12] col-start-1 row-start-2" aria-hidden="true">裝</span>
+      <span class="relative col-start-2 row-start-2 grid grid-cols-[1em_.65em] items-center self-center gap-x-[.12em] pl-[.08em] text-[.23em] text-stone-600" aria-hidden="true">
+        <span class="flex flex-col leading-[1.2]"><span>ㄓ</span><span>ㄨ</span><span>ㄤ</span></span>
+        <span class="text-center text-[.8em]/none"></span>
+      </span>
+    </span>
+  </template>
+  <script>
+    const cards = document.getElementById('cards');
+    for (const row of document.querySelectorAll('[data-sample]')) {
+      row.append(cards.content.cloneNode(true));
+    }
+  </script>
+</body>
+</html>
