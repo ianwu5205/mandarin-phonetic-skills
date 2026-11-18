@@ -1,18 +1,18 @@
 ---
 name: zhuyin
-description: 製作或調整中文注音 HTML，將直排注音與聲調置於中文字右側。適用於注音字卡、識字教材、注音對照排版與編輯器的文字呈現。
+description: 製作或調整華語注音 HTML，將直排注音與聲調置於文字右側。適用於注音字卡、識字教材、注音對照排版與編輯器的文字呈現。
 ---
 
-# 中文注音排版
+# 華語注音排版
 
-產生可選取的 HTML 文字，以 Google Noto 字型呈現「中文字＋右側直排注音」，參照 [assets/example.html](assets/example.html)。此範例可直接開啟，含「去、宣、嗎」及不同字級，沒有框架或拼音字庫依賴。新增版面時複用其中字卡結構與 CSS；整合現有網站時保留其框架與主題。
+產生可選取的 HTML 文字，以 Google Noto 字型呈現「文字＋右側直排注音」，參照 [assets/example.html](assets/example.html)。此範例可直接開啟，含「去、宣、嗎」及不同字級，沒有框架或拼音字庫依賴。新增版面時複用其中字卡結構與 CSS；整合現有網站時保留其框架與主題。
 
 讀音轉換、句子整合與驗收見 [references/shared.md](references/shared.md)；拼音轉注音見 [references/zhuyin-conversion.md](references/zhuyin-conversion.md)。
 
 ## 字卡規格
 
 - 每個字是一個 inline-grid，兩欄為 `1em .46em`，一列為 `1.12em`。字卡 font-size 為主字級，建議預設 112px；內部尺寸用 em 隨字級等比縮放。
-- 中文字位於第一欄，字級 `1em`、行高 `1.12`，用 Noto Sans TC，字重 400。
+- 文字位於第一欄，字級 `1em`、行高 `1.12`，用 Noto Sans TC，字重 400。
 - 注音位於第二欄，垂直置中；字級 `.23em`、左內距 `.08em`，用 Noto Sans TC。每個注音符號獨立一行，flex column，行高 `1.2`。用符號文字「ㄧ」，不要旋轉整個字串。
 - 注音區另設兩欄 `1em .65em`、欄距 `.12em`，第二欄放聲調。聲調字級是注音的 `.8em`，行高 1，垂直置中。保留聲調空間，避免碰到注音或下一字；不要用負 right 偏移把聲調壓進注音。
 - 一聲不顯示符號；二、三、四聲為 `ˊ ˇ ˋ`。輕聲 `˙` 放在注音柱上方，參照範例的 `.neutral .tone`，不是右側中央。

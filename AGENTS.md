@@ -2,6 +2,10 @@
 
 This repo holds independently publishable skills for Mandarin phonetic HTML.
 
+## Terminology
+
+- Use **華語** in Chinese and **Mandarin** in English when referring to the language in HTML pages and Markdown documentation, including skill instructions. Use **字** or **文字** for the written characters, as appropriate. Use **正體** when naming the traditional writing system in Chinese.
+
 ## Skills
 
 | Directory | Use when |
